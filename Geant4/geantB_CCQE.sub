@@ -1,0 +1,18 @@
+executable = /afs/cern.ch/user/your user name/geantB_CCQE.sh
+arguments = $(ClusterId) $(ProcId)
+
+should_transfer_files = YES
+getenv = true
+
+output = /afs/cern.ch/work/your user name/directory name/CCQE/nu_e_BCCDIS-$(ClusterId).$(ProcId).out
+error  = /afs/cern.ch/work/your user name/directory name/CCQE/nu_e_BCCDIS-$(ClusterId).$(ProcId).err
+log    = /afs/cern.ch/work/your user name/directory name/CCQE/nu_e_BCCDIS-$(ClusterId).$(ProcId).log
+
+requirements = (CERNEnvironment =!= "qa")
++JobFlavour  = "nextweek"
+
+request_cpus = 1  
+request_disk = 200MB
+request_memory = 2560MB
+
+queue 140
